@@ -20,12 +20,12 @@ remember what to do when I set up another box.
    to link `zshenv` into your home directory:
 
    ```
-   ln -s "`pwd`/zshenv ~/.zshenv
+   ln -s "`pwd`/zshenv ~/.zshenv"
    ```
 
 1. The rest of your configs are in the `.zshrc` put it in the `ZDOTDIR`
 
    ```
-   ln -s "`pwd`/zshrc ~/.config/.zshrc
+   ln -s "`pwd`/zshrc ~/.config/.zshrc"
    ```
 
