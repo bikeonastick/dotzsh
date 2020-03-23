@@ -1,0 +1,17 @@
+function tbase() {
+  mux=`pgrep tmux`
+  if [ -n "$mux" ]
+  then
+    echo "tmux running, attaching to base"
+    tmux attach -t base
+  else
+    echo "tmux not running, starting with a base session"
+    tmux new -s base
+  fi
+  
+  exit 0 
+}
+
+# initialization
+#tbase()
+

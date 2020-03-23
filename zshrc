@@ -18,5 +18,15 @@ setopt HIST_VERIFY
 setopt CORRECT
 setopt CORRECT_ALL
 
+# case insensitive globbing
+setopt NO_CASE_GLOB
+
+# aliases
+alias ll='ls -al'
+
+# functions
+
+autoload tbase
+
 
 export EDITOR=nvim
