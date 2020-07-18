@@ -26,6 +26,6 @@ remember what to do when I set up another box.
 1. The rest of your configs are in the `.zshrc` put it in the `ZDOTDIR`
 
    ```
-   ln -s "`pwd`/zshrc ~/.config/.zshrc"
+   ln -s "`pwd`/zshrc ~/.config/zsh/.zshrc"
    ```
 
