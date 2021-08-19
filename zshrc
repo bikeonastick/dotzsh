@@ -38,3 +38,9 @@ zstyle ':vcs_info:git:*' formats '%F{240}(%b)%r%f'
 zstyle ':vcs_info:*' enable git
 
 export EDITOR=nvim
+
+# adding rbenv
+eval "$(rbenv init -)"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+[[ -s "/Users/roberttomb/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/roberttomb/.sdkman/bin/sdkman-init.sh"
