@@ -43,4 +43,4 @@ export EDITOR=nvim
 eval "$(rbenv init -)"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-[[ -s "/Users/roberttomb/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/roberttomb/.sdkman/bin/sdkman-init.sh"
+[[ -s "${HOME}/.sdkman/bin/sdkman-init.sh" ]] && source "${HOME}/.sdkman/bin/sdkman-init.sh"
