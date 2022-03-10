@@ -1,0 +1,6 @@
+[include]
+  path = .gituser-work
+[includeIf "gitdir:~/Development/mine/"]
+  path = .gituser-mine
+[init]
+	defaultBranch = main

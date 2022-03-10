@@ -1,0 +1,5 @@
+[user]
+  name = robert tomb
+  email = my@email.com
+[core]
+  sshCommand = "ssh -i ~/.ssh/gh_key"

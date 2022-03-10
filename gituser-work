@@ -1,0 +1,5 @@
+[user]
+  name = robert tomb
+  email = robert@workplace.com
+[core]
+  sshCommand = "ssh -i ~/.ssh/workkey"

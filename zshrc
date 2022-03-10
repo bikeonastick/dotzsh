@@ -27,6 +27,7 @@ alias ll='ls -al'
 # functions
 
 autoload tbase
+autoload cpcrypt
 
 # right side prompt
 autoload -Uz vcs_info
@@ -40,7 +41,17 @@ zstyle ':vcs_info:*' enable git
 export EDITOR=nvim
 
 # adding rbenv
-eval "$(rbenv init -)"
+#eval "$(rbenv init -)"
+
+# adding nvm
+export NVM_DIR="$HOME/.config/.nvm"
+# loading nvm
+[ -s "/Users/robert.tomb/Development/homebrew/opt/nvm/nvm.sh" ] && \. "/Users/robert.tomb/Development/homebrew/opt/nvm/nvm.sh"
+# loading bash completion
+[ -s "/Users/robert.tomb/Development/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/Users/robert.tomb/Development/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+
+# getting chruby
+source /Users/robert.tomb/Development/homebrew/opt/chruby/share/chruby/chruby.sh
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 [[ -s "${HOME}/.sdkman/bin/sdkman-init.sh" ]] && source "${HOME}/.sdkman/bin/sdkman-init.sh"
