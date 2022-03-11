@@ -1,0 +1,47 @@
+# vim: ft=sh
+function cpcrypt() {
+  USAGE=`cat << EOF
+  
+  creates, reads, updates encrypted text to/from pasteboard
+  
+  default mode is read
+  usage: 
+         cpcrypt <name>
+         cpcrypt -c <name>
+ 
+  encrypted file data stored in ~/.config/.pass/<file>.enc
+  EOF`
+
+  tempfile=/tmp/cp_tmpfile.tmp
+  if [[ "$1" == "-c" ]]; then
+    if [ ! -d "~/.config/.pass" ]; then
+      out=`mkdir -p ~/.config/.pass`
+    fi
+    if [ -z "$2" ]; then
+      echo "no name supplied"
+      echo $USAGE
+    else
+      name=$2
+      rm -f ~/.config/.pass/${name}.enc
+      pbpaste > ${tempfile}
+      # shhh i know what i did
+      openssl des -k $USER -in ${tempfile} -out ~/.config/.pass/${name}.enc
+      # delete temp file
+      rm -f ${tempfile}
+    fi
+
+  elif [[ $# -eq 1 ]]; then
+    name=$1
+    openssl des -d -k $USER -in ~/.config/.pass/${name}.enc -out ${tempfile}
+    echo "value copied to pasteboard!"
+    cat ${tempfile} | pbcopy
+    rm -f ${tempfile}
+  else
+    echo $USAGE
+  fi
+  
+  #exit 0 
+}
+
+# initialization
+#cpcrypt()
